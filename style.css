@@ -457,10 +457,12 @@ header{
         height: auto;
         position: static;
     }
-    .logo{
+    .logo.notvisible_logo{
         display: none;
     }
-    #logo-checkbox:checked ~ .logo{
+    .logo.visible_logo{
+        position: relative;
+        top: 30px;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -483,14 +485,14 @@ header{
         align-items: center;
     }
     
-    .burger{
+    #burg{
         position: relative;
         width: 40px;
         height: 35px;
         display:block;
         margin-left: 10px;
     }
-    .burger span, .burger::after, .burger::before{
+    #burg #se, #burg #fi::after, #burg #fi::before{
         transition: 0.5s;
         height: 3px;
         width: 100%;
@@ -498,41 +500,38 @@ header{
         background: #F4ACC4;
         margin: 0 auto;
     }
-    .burger span{
+    .burger.menu #se{
         top: 16px;
+        
     }
-    .burger::after, .burger::before{
+    .burger #fi::after, .burger #fi::before{
         content: '';
+        
     }
-    .burger::after{
+    .burger.menu #fi::after{
         bottom: 5px;
     }
-    .burger::before{
+    .burger.menu #fi::before{
         top: 5px;
     }
-    #logo-label{
-        font-size: 19px;
-        display: block;
-        position:absolute;
-        top:0;
-        left:0;
-        width: 100%;
-        height: 35px;
-        cursor:pointer;
-    }
     
-    #logo-checkbox:checked ~ .burger span {
+    #burg{
+        cursor: pointer;
+    }
+    .burger.cross #se {
         opacity:0; 
         transition: 0.5s; 
     }
-    #logo-checkbox:checked ~ .burger::before {
+    .burger.cross > #fi::before {
         transform: rotate(45deg);
         top: 16px;
         transition: 0.4s;
+        opacity:1;
     }
-    #logo-checkbox:checked ~ .burger::after{
+    .burger.cross > #fi::after{
         transform: rotate(-45deg);
         bottom: 16px;
         transition: 0.4s;
+        opacity:1;
     }
 }

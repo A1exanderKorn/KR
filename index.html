@@ -5,18 +5,18 @@
         <link rel="stylesheet" href="style.css" type="text/css">
         <title>Солнечная система</title>
     </head>
-    <body id="index">
+    <body id="index" onload="main_onload()">
         <div id="root"></div>
         
         <div class="main_head">
             <header>
-                <input type="checkbox" class="logo-checkbox" id="logo-checkbox"> 
-                <label for="logo-checkbox" id="logo-label"></label>
-                <div class="burger">
-                    <span></span>
+                <div id="burg" class="burger menu" onclick="burger()">
+                    <span id="fi">
+                        <span id="se"></span>
+                    </span>
                 </div>
                 
-                <nav class="logo">
+                <nav id="nav_panel" class="logo notvisible_logo">
                     <a href="index.html"><img src="fav.png" alt="Солнечная система" class="logo-img"></a>
                     <div class="ul">
                         <a href="planets/Sun.html">Солнце</a>
@@ -84,7 +84,7 @@
             <a href="mailto:mr.korneev.2004@mail.ru"><img src="planets/mail.png"></a>
         </footer>
         
-        <script type="text/javascript" src="scripts.js"></script>
+        <script type="text/javascript" src="planets/scripts.js"></script>
     </body>
 
 </html>
